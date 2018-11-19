@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../../services/api.service';
+import {Post} from '../../models/post';
 
 @Component({
   selector: 'app-posts',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+  data: Post[] = [];
 
-  constructor() { }
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit() {
+    this.api.getPosts()
+      .subscribe(res => {
+        this.data = res;
+        console.log(this.data);
+      }, err => {
+        console.log(err);
+      });
   }
 
 }

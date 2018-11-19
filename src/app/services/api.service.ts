@@ -7,7 +7,7 @@ import {Post} from '../models/post';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'https://jsonplaceholder.typicode.com/';
+const apiUrl = 'https://jsonplaceholder.typicode.com';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class ApiService {
   }
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(apiUrl)
+    return this.http.get<Post[]>(`${apiUrl}/posts`)
       .pipe(
         tap(res => console.log('fetched posts')),
         catchError(this.handleError('getPosts', []))
