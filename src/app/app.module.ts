@@ -8,7 +8,7 @@ import {PostsComponent} from './components/posts/posts.component';
 import {PostDetailComponent} from './components/post-detail/post-detail.component';
 import {MyNavComponent} from './my-nav/my-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatProgressBarModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatProgressBarModule, MatCardModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -30,7 +30,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     MatListModule,
     MatGridListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

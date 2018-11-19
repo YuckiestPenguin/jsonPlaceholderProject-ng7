@@ -8,7 +8,7 @@ import {Post} from '../../models/post';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  data: Post[] = [];
+  posts: Post[] = [];
   isLoadingResults = true;
 
   constructor(private api: ApiService) {
@@ -17,8 +17,8 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     this.api.getPosts()
       .subscribe(res => {
-        this.data = res;
-        console.log(this.data);
+        this.posts = res;
+        console.log(this.posts);
         this.isLoadingResults = false;
       }, err => {
         console.log(err);
